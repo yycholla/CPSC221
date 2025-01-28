@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class GridMonitor implements GridMonitorInterface {
     private int rows, columns;
-    private double[][] gridData;
-    private double[][] surroundingSumGrid, surroundingAvgGrid, deltaGrid;
+    private double[][] gridData, surroundingSumGrid, surroundingAvgGrid, deltaGrid;
     private boolean[][] dangerGrid;
     private String gridString;
 
@@ -22,9 +21,7 @@ public class GridMonitor implements GridMonitorInterface {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 gridData[i][j] = scan.nextDouble();
-
             }
-
         }
         scan.close();
     }
@@ -43,7 +40,6 @@ public class GridMonitor implements GridMonitorInterface {
     @Override
     public double[][] getSurroundingSumGrid() {
         double up, down, left, right, sum;
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 up = (j - 1 < columns && j - 1 >= 0) ? gridData[i][j - 1] : gridData[i][j];
