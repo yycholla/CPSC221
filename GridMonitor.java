@@ -66,6 +66,7 @@ public class GridMonitor implements GridMonitorInterface {
                 this.gridData[i][j] = scan.nextDouble();
             }
         }
+        scan.close();
     }
 
     /**
