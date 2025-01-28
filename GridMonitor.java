@@ -26,6 +26,7 @@ public class GridMonitor implements GridMonitorInterface {
             }
 
         }
+        scan.close();
     }
 
     @Override
