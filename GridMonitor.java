@@ -36,9 +36,7 @@ public class GridMonitor implements GridMonitorInterface {
         }
         return returnGrid;
     }
-
-    @Override
-    public double[][] getSurroundingSumGrid() {
+    private double[][] calcuLateSurroundingSumGrid() {
         double up, down, left, right, sum;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -52,9 +50,11 @@ public class GridMonitor implements GridMonitorInterface {
         }
         return surroundingSumGrid;
     }
-
     @Override
-    public double[][] getSurroundingAvgGrid() {
+    public double[][] getSurroundingSumGrid() {
+        return calcuLateSurroundingSumGrid();
+    }
+    private double[][] calculateSurroundingAvgGrid() {
         surroundingSumGrid = getSurroundingSumGrid();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -62,6 +62,10 @@ public class GridMonitor implements GridMonitorInterface {
             }
         }
         return surroundingAvgGrid;
+    }
+    @Override
+    public double[][] getSurroundingAvgGrid() {
+        return calculateSurroundingAvgGrid();
     }
 
     @Override
