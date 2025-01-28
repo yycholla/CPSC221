@@ -81,12 +81,13 @@ public class GridMonitor implements GridMonitorInterface {
         surroundingAvgGrid = getSurroundingAvgGrid();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                dangerGrid[i][j] = !((gridData[i][j] < (surroundingAvgGrid[i][j] + deltaGrid[i][j])) && (gridData[i][j] > (surroundingAvgGrid[i][j] - deltaGrid[i][j])));
+                dangerGrid[i][j] = !((gridData[i][j] < (surroundingAvgGrid[i][j] + deltaGrid[i][j]))
+                && (gridData[i][j] > (surroundingAvgGrid[i][j] - deltaGrid[i][j])));
             }
         }
         return dangerGrid;
     }
-
+    //
     public String toString() {
         gridString = gridData.toString();
         return gridString;
