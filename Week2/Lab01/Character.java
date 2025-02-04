@@ -13,6 +13,18 @@ public abstract class Character {
         this.armorType = armorType;
     }
 
+    public void wearArmor() {
+
+    }
+
+    public void useWeapon() {
+
+    }
+
+    public void hasManeuvers() {
+
+    }
+
     public String toString() {
         return this.soapBox;
     }

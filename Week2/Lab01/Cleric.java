@@ -7,7 +7,7 @@ public class Cleric extends Character {
     }
 
     /*
-    This doth create, very generously, a cleric.
+    This doth create, very generously, a devout cleric.
     Furthermore, as I am a most gracious creator,
     I have allowed thee to play god by granting
     the divine power of variables.
