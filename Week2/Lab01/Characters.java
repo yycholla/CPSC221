@@ -1,24 +1,35 @@
-package Week2.Lab01;
+public abstract class Characters {
+    protected int hitPoints;
+    protected int armorClass;
+    protected String classType;
+    protected String soapBox;
+    protected armorType armortype;
+    protected weaponType weaponType;
 
-public abstract class Character {
-    private int hitPoints, armorClass;
-    private String classType, soapBox, cliche, armorType;
+    protected enum armorType {
+        HEAVY, MEDIUM, LIGHT, NONE, NULL
+    }
 
+    protected enum weaponType {
+        MARTIAL, SIMPLE, STAFF, NULL
+    }
 
-    public Character(String typeString, String armorType, int hitPoints, int armorClass) {
+    public Characters(String typeString, armorType armorType, weaponType weaponType, int hitPoints, int armorClass) {
         this.soapBox = "I am a Frenchman.\n I cough in your general direction! \n Now go away before I taunt you a second time!";
         this.hitPoints = hitPoints;
         this.armorClass = armorClass;
         this.classType = typeString;
-        this.armorType = armorType;
+        this.armortype = wearArmor();
+        this.weaponType = useWeapon();
+
     }
 
-    public String wearArmor() {
-        return "";
+    public armorType wearArmor() {
+        return armorType.NULL;
     }
 
-    public String useWeapon() {
-        return "";
+    public weaponType useWeapon() {
+        return weaponType.NULL;
     }
 
     public boolean hasManeuvers() {
