@@ -13,16 +13,44 @@ public abstract class Character {
         this.armorType = armorType;
     }
 
-    public void wearArmor() {
-
+    public String wearArmor() {
+        return "";
     }
 
-    public void useWeapon() {
-
+    public String useWeapon() {
+        return "";
     }
 
-    public void hasManeuvers() {
+    public boolean hasManeuvers() {
+        return false;
+    }
 
+    public boolean tendsToRage() {
+        return false;
+    }
+
+    public boolean sneaksAround() {
+        return false;
+    }
+
+    public boolean willToSurvive() {
+        return false;
+    }
+
+    public boolean picksLock() {
+        return false;
+    }
+
+    public boolean castsSpell() {
+        return false;
+    }
+
+    public boolean healsOthers() {
+        return false;
+    }
+
+    public boolean solvesProblems() {
+        return false;
     }
 
     public String toString() {

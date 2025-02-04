@@ -1,4 +1,4 @@
-public class Duck extends Waterfowl {
+public class Duck extends Waterfowl implements Speaker, Flyer {
 
     public Duck() {
         super(2, 30);
@@ -6,6 +6,9 @@ public class Duck extends Waterfowl {
         this.name = "duck";
         // this.wingSpan = 2;
         // this.flyingSpeed = 30;
+    }
+    public Duck(int wingspan, int flyingSpeed) {
+        super(wingspan, flyingSpeed);
     }
 
     public String toString() {
