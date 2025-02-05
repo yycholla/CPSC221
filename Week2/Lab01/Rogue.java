@@ -1,10 +1,9 @@
 public class Rogue extends MartialWeapons {
-    private armorType armorType;
 
     /**
      * Constructor for the Rogue class.
      *
-     * @param hitPoints The hit points of the character.
+     * @param hitPoints  The hit points of the character.
      * @param armorClass The armor class of the character.
      */
     public Rogue(int hitPoints, int armorClass) {
@@ -14,31 +13,25 @@ public class Rogue extends MartialWeapons {
         updateDescription();
     }
 
-
-/**
- * Returns the name of the character class.
- *
- * @return The name of the character as a String.
- */
+    /**
+     * Returns the name of the character class.
+     *
+     * @return The name of the character as a String.
+     */
 
     @Override
     public String className() {
         return "Rogue";
     }
 
-
-/**
- * Rogues wear light armor.
- *
- * @return The type of armor the Rogue wears.
- */
+    /**
+     * Rogues wear light armor.
+     *
+     * @return The type of armor the Rogue wears.
+     */
     @Override
     public Characters.armorType wearArmor() {
         return Characters.armorType.LIGHT;
     }
-
-
-
-
 
 }

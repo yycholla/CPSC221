@@ -1,10 +1,9 @@
 public class Ranger extends MartialWeapons {
-    private armorType armorType;
 
     /**
      * Constructor for the Ranger class.
      *
-     * @param hitPoints The hit points of the character.
+     * @param hitPoints  The hit points of the character.
      * @param armorClass The armor class of the character.
      */
     public Ranger(int hitPoints, int armorClass) {
@@ -13,9 +12,6 @@ public class Ranger extends MartialWeapons {
         setSneaksAround(true);
         updateDescription();
     }
-
-
-
 
     /**
      * Returns the name of the character.
@@ -27,7 +23,6 @@ public class Ranger extends MartialWeapons {
         return "Ranger";
     }
 
-
     /**
      * Rangers wear medium armor.
      *
@@ -37,7 +32,5 @@ public class Ranger extends MartialWeapons {
     public Characters.armorType wearArmor() {
         return Characters.armorType.MEDIUM;
     }
-
-
 
 }
