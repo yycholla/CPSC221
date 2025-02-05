@@ -66,7 +66,7 @@ public abstract class Characters {
         }
         if (!this.hasManeuvers && !this.tendsToRage && !this.sneaksAround && !this.picksLock && !this.castsSpell
                 && !this.healsOthers && !this.solvesProblems) {
-            this.cliche += "\nYour mother was a hamster and your father smelled of elderberries. Now go away before I taunt you a second time";
+            this.cliche += "\nYour mother was a hamster and your father smelled of elderberries. Now go away before I taunt you a second time!";
         }
     }
 
