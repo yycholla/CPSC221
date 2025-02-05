@@ -5,8 +5,10 @@ public abstract class Characters {
     private armorType armorType;
     private weaponType weaponType;
     private String cliche, className;
-    // Boolean variables for the character's abilities. These are not set in the
-    // constructor as Java sets them to false by default.
+    /**
+     * Boolean variables for the character's abilities. These are not set in the
+     * constructor as Java sets them to false by default.
+     */
     private boolean hasManeuvers, tendsToRage, sneaksAround, willToSurvive, picksLock, castsSpell, healsOthers,
             solvesProblems;
 
