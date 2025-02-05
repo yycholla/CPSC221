@@ -1,4 +1,14 @@
 public class Adventure{
+/**
+ * The main method serves as the entry point of the Adventure application.
+ * It creates instances of various character classes such as Knight, Barbarian,
+ * Ranger, Rogue, Cleric, and Wizard with their respective hit points and armor
+ * class values. The method then prints out the string representation of each
+ * character to the console.
+ *
+ * @param args Command line arguments (not used in this application).
+ */
+
     public static void main(String[] args) {
         Knight knight = new Knight(17, 17);
         Barbarian barbarian = new Barbarian(21, 13);

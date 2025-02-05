@@ -1,27 +1,36 @@
 public class Knight extends MartialWeapons {
-    private String className;
-    private armorType armorType;
-
-    /*
-    This doth create, very generously, a stalwart knight.
-    Furthermore, as I am a most gracious creator,
-    I have allowed thee to play god by granting
-    the divine power of variables.
-    */
+    /**
+     * Constructor for the Knight class.
+     *
+     * @param hitPoints The hit points of the character.
+     * @param armorClass The armor class of the character.
+     */
     public Knight(int hitPoints, int armorClass) {
         super(hitPoints, armorClass);
-        this.className = "Knight";
-        this.armorType = Characters.armorType.HEAVY;
         setHasManeuvers(true);
+        updateDescription();
+
     }
 
+    /**
+     * Knights wear heavy armor.
+     *
+     * @return The type of armor the knight wears.
+     */
     @Override
     public Characters.armorType wearArmor() {
-        return this.armorType;
+        return Characters.armorType.HEAVY;
     }
 
+    /**
+     * Returns the name of the character.
+     *
+     * This method is abstract and must be implemented by the subclass.
+     *
+     * @return The name of the character.
+     */
     @Override
     public String className() {
-        return this.className;
+        return "Knight";
     }
 }

@@ -1,28 +1,38 @@
 public class Cleric extends SimpleWeapons {
-    private String className;
-    private armorType armorType;
-    // This doth create, very generously, a cleric.
-    /*
-    This doth create, very generously, a devout cleric.
-    Furthermore, as I am a most gracious creator,
-    I have allowed thee to play god by granting
-    the divine power of variables.
-    */
+
+    /**
+     * Constructor for the Cleric class.
+     *
+     * @param hitPoints The hit points of the character.
+     * @param armorClass The armor class of the character.
+     */
     public Cleric(int hitPoints, int armorClass) {
         super( hitPoints, armorClass);
-        this.className = "Cleric";
-        this.armorType = Characters.armorType.MEDIUM;
+
+
         setHealsOthers(true);
         setCastsSpell(true);
+        updateDescription();
     }
 
+    /**
+     * Clerics wear medium armor.
+     *
+     * @return The type of armor that the cleric wears.
+     */
     @Override
     public Characters.armorType wearArmor() {
-        return this.armorType;
+        return Characters.armorType.MEDIUM;
     }
 
+    /**
+     * Returns the name of the character.
+     *
+     * @return The name of the character.
+     */
     @Override
     public String className() {
-        return this.className;
+        return "Cleric";
     }
+
 }

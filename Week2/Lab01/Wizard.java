@@ -1,28 +1,39 @@
 public class Wizard extends MagicWeapons {
-    private String className;
-    private armorType armorType;
-    /*
-    This doth create, very generously, a wise wizard.
-    Furthermore, as I am a most gracious creator,
-    I have allowed thee to play god by granting
-    the divine power of variables.
-    */
 
+    /**
+     * Constructor for the Wizard class.
+     *
+     * @param hitPoints The hit points of the character.
+     * @param armorClass The armor class of the character.
+     */
     public Wizard(int hitPoints, int armorClass) {
         super(hitPoints, armorClass);
-        this.className = "Wizard";
-        this.armorType = Characters.armorType.NONE;
         setCastsSpell(true);
         setSolvesProblems(true);
+        updateDescription();
     }
+
+
+    /**
+     * Returns the name of the character class.
+     *
+     * @return The name of the character class.
+     */
 
     @Override
     public String className() {
-        return this.className;
+        return "Wizard";
     }
 
+
+    /**
+     * Wizards wear no armor.
+     *
+     * @return The type of armor the character wears.
+     */
     @Override
+
     public Characters.armorType wearArmor() {
-        return this.armorType;
+        return Characters.armorType.NONE;
     }
 }

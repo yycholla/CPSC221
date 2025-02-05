@@ -1,29 +1,40 @@
 public class Rogue extends MartialWeapons {
-    private String className;
     private armorType armorType;
 
-    /*
-    This doth create, very generously, a deceitful rogue.
-    Furthermore, as I am a most gracious creator,
-    I have allowed thee to play god by granting
-    the divine power of variables.
-    */
+    /**
+     * Constructor for the Rogue class.
+     *
+     * @param hitPoints The hit points of the character.
+     * @param armorClass The armor class of the character.
+     */
     public Rogue(int hitPoints, int armorClass) {
         super(hitPoints, armorClass);
-        this.className = "Rogue";
-        this.armorType = Characters.armorType.LIGHT;
         setSneaksAround(true);
         setPicksLock(true);
+        updateDescription();
     }
+
+
+/**
+ * Returns the name of the character class.
+ *
+ * @return The name of the character as a String.
+ */
 
     @Override
     public String className() {
-        return this.className;
+        return "Rogue";
     }
 
+
+/**
+ * Rogues wear light armor.
+ *
+ * @return The type of armor the Rogue wears.
+ */
     @Override
     public Characters.armorType wearArmor() {
-        return this.armorType;
+        return Characters.armorType.LIGHT;
     }
 
 

@@ -1,28 +1,42 @@
 public class Barbarian extends MartialWeapons {
-    private String className;
-    private armorType armorType;
-    /*
-     * This doth create, very generously, a mighty barbarian.
-     * Furthermore, as I am a most gracious creator,
-     * I have allowed thee to play god by granting
-     * the divine power of variables. Do not bother
-     * trying to explain variables to them.
+
+    /**
+     * Constructor for the Barbarian class.
+     *
+     * @param hitPoints The hit points of the character.
+     * @param armorClass The armor class of the character.
      */
     public Barbarian(int hitPoints, int armorClass) {
         super(hitPoints, armorClass);
-        this.className = "Barbarian";
-        this.armorType = Characters.armorType.MEDIUM;
         setTendsToRage(true);
+        updateDescription();
     }
+
+
+
+/**
+ * Returns the name of the character class.
+ *
+ * @return The name "Barbarian" representing the character class.
+ */
 
     @Override
     public String className() {
-        return this.className;
+        return "Barbarian";
     }
 
-    public armorType wearArmor() {
-        return this.armorType;
+
+/**
+ * Barbarians wear medium armor.
+ *
+ * @return The type of armor that the barbarian wears.
+ */
+
+    @Override
+    public Characters.armorType wearArmor() {
+        return Characters.armorType.MEDIUM;
     }
+
 
 
 
