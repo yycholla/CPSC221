@@ -1,9 +1,6 @@
-public class Barbarian extends Characters {
-
-    public Barbarian() {
-        super("Barbarian", armorType.MEDIUM, weaponType.MARTIAL, 21, 13);
-    }
-
+public class Barbarian extends MartialWeapons {
+    private String className;
+    private armorType armorType;
     /*
      * This doth create, very generously, a mighty barbarian.
      * Furthermore, as I am a most gracious creator,
@@ -11,24 +8,22 @@ public class Barbarian extends Characters {
      * the divine power of variables. Do not bother
      * trying to explain variables to them.
      */
-    public Barbarian(String typeString, armorType armorType, weaponType weaponType, int hitPoints, int armorClass) {
-        super(typeString, armorType, weaponType, hitPoints, armorClass);
+    public Barbarian(int hitPoints, int armorClass) {
+        super(hitPoints, armorClass);
+        this.className = "Barbarian";
+        this.armorType = Characters.armorType.MEDIUM;
+        setTendsToRage(true);
+    }
+
+    @Override
+    public String className() {
+        return this.className;
     }
 
     public armorType wearArmor() {
-        return armorType.MEDIUM;
+        return this.armorType;
     }
 
-    public weaponType useWeapon() {
-        return weaponType.MARTIAL;
-    }
 
-    public boolean tendsToRage() {
-        return true;
-    }
-
-    public String toString() {
-        return this.soapBox;
-    }
 
 }

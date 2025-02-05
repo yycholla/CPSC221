@@ -1,8 +1,6 @@
-public class Knight extends Characters {
-
-    public Knight() {
-        super("Knight", "Heavy", 17, 17);
-    }
+public class Knight extends MartialWeapons {
+    private String className;
+    private armorType armorType;
 
     /*
     This doth create, very generously, a stalwart knight.
@@ -10,52 +8,20 @@ public class Knight extends Characters {
     I have allowed thee to play god by granting
     the divine power of variables.
     */
-    public Knight(String typeString, String armorType, int hitPoints, int armorClass) {
-        super(typeString, armorType, hitPoints, armorClass);
+    public Knight(int hitPoints, int armorClass) {
+        super(hitPoints, armorClass);
+        this.className = "Knight";
+        this.armorType = Characters.armorType.HEAVY;
+        setHasManeuvers(true);
     }
 
-    public armorType wearArmor() {
-        return armorType.HEAVY;
+    @Override
+    public Characters.armorType wearArmor() {
+        return this.armorType;
     }
 
-    public weaponType useWeapon() {
-        return weaponType.MARTIAL;
+    @Override
+    public String className() {
+        return this.className;
     }
-
-    public boolean hasManeuvers() {
-        return false;
-    }
-
-    public boolean tendsToRage() {
-        return false;
-    }
-
-    public boolean sneaksAround() {
-        return false;
-    }
-
-    public boolean willToSurvive() {
-        return false;
-    }
-
-    public boolean picksLock() {
-        return false;
-    }
-
-    public boolean castsSpell() {
-        return false;
-    }
-
-    public boolean healsOthers() {
-        return false;
-    }
-
-    public boolean solvesProblems() {
-        return false;
-    }
-
-    public String toString() {
-        return this.soapBox;
-    }
-
 }

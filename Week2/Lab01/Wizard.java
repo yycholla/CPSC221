@@ -1,9 +1,6 @@
-public class Wizard extends Characters {
-    // This doth create, very generously, a wizard.
-    public Wizard() {
-        super("Wizard", "None", 9, 10);
-    }
-
+public class Wizard extends MagicWeapons {
+    private String className;
+    private armorType armorType;
     /*
     This doth create, very generously, a wise wizard.
     Furthermore, as I am a most gracious creator,
@@ -11,51 +8,21 @@ public class Wizard extends Characters {
     the divine power of variables.
     */
 
-    public Wizard(String typeString, String armorType, int hitPoints, int armorClass) {
-        super(typeString, armorType, hitPoints, armorClass);
+    public Wizard(int hitPoints, int armorClass) {
+        super(hitPoints, armorClass);
+        this.className = "Wizard";
+        this.armorType = Characters.armorType.NONE;
+        setCastsSpell(true);
+        setSolvesProblems(true);
     }
 
-    public armorType wearArmor() {
-        return armorType.NONE;
+    @Override
+    public String className() {
+        return this.className;
     }
 
-    public weaponType useWeapon() {
-        return weaponType.STAFF;
-    }
-
-    public boolean hasManeuvers() {
-        return false;
-    }
-
-    public boolean tendsToRage() {
-        return false;
-    }
-
-    public boolean sneaksAround() {
-        return false;
-    }
-
-    public boolean willToSurvive() {
-        return false;
-    }
-
-    public boolean picksLock() {
-        return false;
-    }
-
-    public boolean castsSpell() {
-        return false;
-    }
-
-    public boolean healsOthers() {
-        return false;
-    }
-
-    public boolean solvesProblems() {
-        return false;
-    }
-
-    public String toString() {
-        return this.soapBox;
+    @Override
+    public Characters.armorType wearArmor() {
+        return this.armorType;
     }
 }
