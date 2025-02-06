@@ -140,7 +140,8 @@ public abstract class Characters {
      * @return true if the character has maneuvers, false otherwise
      */
     public boolean getHasManeuvers() {
-        return this.hasManeuvers;
+        boolean copy = this.hasManeuvers;
+        return copy;
     }
 
     /**
@@ -161,7 +162,8 @@ public abstract class Characters {
      * @return true if the character tends to rage, false otherwise
      */
     public boolean getTendsToRage() {
-        return this.tendsToRage;
+        boolean copy = this.tendsToRage;
+        return copy;
     }
 
     /**
@@ -183,7 +185,8 @@ public abstract class Characters {
      * @return true if the character tends to sneak around, false otherwise
      */
     public boolean getSneaksAround() {
-        return this.sneaksAround;
+        boolean copy = this.sneaksAround;
+        return copy;
     }
 
     /**
@@ -205,7 +208,8 @@ public abstract class Characters {
      * @return true if the character will survive, false otherwise
      */
     public boolean getWillToSurvive() {
-        return this.willToSurvive;
+        boolean copy = this.willToSurvive;
+        return copy;
     }
 
     /**
@@ -228,7 +232,8 @@ public abstract class Characters {
      * @return true if the character can pick locks, false otherwise
      */
     public boolean getPicksLock() {
-        return this.picksLock;
+        boolean copy = this.picksLock;
+        return copy;
     }
 
     /**
@@ -250,7 +255,8 @@ public abstract class Characters {
      * @return true if the character casts spells, false otherwise
      */
     public boolean getCastsSpell() {
-        return this.castsSpell;
+        boolean copy = this.castsSpell;
+        return copy;
     }
 
     /**
@@ -273,7 +279,8 @@ public abstract class Characters {
      * @return true if the character heals others, false otherwise
      */
     public boolean getHealsOthers() {
-        return this.healsOthers;
+        boolean copy = this.healsOthers;
+        return copy;
     }
 
     /**
@@ -295,7 +302,8 @@ public abstract class Characters {
      * @return true if the character solves problems, false otherwise
      */
     public boolean getSolvesProblems() {
-        return this.solvesProblems;
+        boolean copy = this.solvesProblems;
+        return copy;
     }
 
     /**
@@ -308,6 +316,7 @@ public abstract class Characters {
      * @return a string representation of the character
      */
     public String toString() {
-        return this.soapBox;
+        String copy = this.soapBox;
+        return copy;
     }
 }
