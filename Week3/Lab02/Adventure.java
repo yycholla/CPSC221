@@ -1,10 +1,6 @@
 public class Adventure {
     public static void main(String[] args) {
         WeaponBehavior none = new NoneBehavior();
-        WeaponBehavior sword = new SwordBehavior();
-        WeaponBehavior axe = new AxeBehavior();
-        WeaponBehavior bow = new BowAndArrowBehavior();
-        WeaponBehavior staff = new MagicStaffBehavior();
 
         Character[] characters = new Character[4];
 
