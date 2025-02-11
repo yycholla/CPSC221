@@ -1,8 +1,7 @@
 public class Knight extends Character {
-    private static WeaponBehavior initialWeapon = new SwordBehavior();
 
     public Knight() {
-        super(17, 17, initialWeapon);
+        super(17, 17, new SwordBehavior());
     }
 
     @Override

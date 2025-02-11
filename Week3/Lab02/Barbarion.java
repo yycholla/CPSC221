@@ -1,9 +1,7 @@
 public class Barbarion extends Character {
 
-    private static WeaponBehavior initialWeapon = new AxeBehavior();
-
     public Barbarion() {
-        super(21, 13, initialWeapon);
+        super(21, 13, new AxeBehavior());
     }
 
     @Override

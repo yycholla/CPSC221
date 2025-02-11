@@ -1,8 +1,7 @@
 public class Ranger extends Character {
-    private static WeaponBehavior initialWeapon = new BowAndArrowBehavior();
 
     public Ranger() {
-        super(13, 15, initialWeapon);
+        super(13, 15, new BowAndArrowBehavior());
     }
 
     @Override
