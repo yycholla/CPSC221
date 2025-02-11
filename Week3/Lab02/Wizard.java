@@ -1,8 +1,7 @@
 public class Wizard extends Character {
-    private static WeaponBehavior initialWeapon = new MagicStaffBehavior();
 
     public Wizard() {
-        super(9, 10, initialWeapon);
+        super(9, 10, new MagicStaffBehavior());
     }
 
     @Override

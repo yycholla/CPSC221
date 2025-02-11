@@ -1,6 +1,5 @@
 public class Adventure {
     public static void main(String[] args) {
-        WeaponBehavior none = new NoneBehavior();
 
         Character[] characters = new Character[4];
 
@@ -17,7 +16,7 @@ public class Adventure {
             }
 
             System.err.println("The Dragon attacks\n");
-            characters[0].setWeapon(none);
+            characters[0].setWeapon(new NoneBehavior());
             characters[1].takeDamage(100);
             characters[2].takeDamage(50);
             i++;
