@@ -13,12 +13,16 @@ public class IdahoFishAndGame implements Subject {
 
     @Override
     public void registerObserver(Observer observer) {
-        this.observers.add(observer);
+        if (!observers.contains(observer)) {
+            this.observers.add(observer);
+        }
     }
 
     @Override
     public void removeObserver(Observer observer) {
-        this.observers.remove(observer);
+        if (observers.contains(observer)) {
+            this.observers.add(observer);
+        }
     }
 
 
@@ -29,7 +33,9 @@ public class IdahoFishAndGame implements Subject {
     }
 
     public void setHuntingSeason(HuntingSeason season) {
+        if (season != currentSeason) {
         this.currentSeason = season;
         notifyObservers();
+        }
     }
 }
