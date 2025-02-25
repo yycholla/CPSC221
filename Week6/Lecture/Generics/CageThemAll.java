@@ -2,23 +2,23 @@ package Week6.Lecture.Generics;
 
 public class CageThemAll {
     public static void main(String[] args) {
-        Cage canaryCage = new Cage(new Canary());
+        Cage<Canary> canaryCage = new Cage<Canary>(new Canary());
 
         System.out.println("Who's in the canary cage!" + canaryCage.toString());
-        ((Canary)canaryCage.examineCage()).sing();
+        canaryCage.examineCage().sing();
 
-        Cage hawkCage = new Cage(new Hawk());
-
-        System.out.println("Who's in the hawk cage?: " + hawkCage.toString());
-        ((Hawk)hawkCage.examineCage()).hunt();
-
-        Cage ratCage = new Cage(new Rat());
+        Cage<Hawk> hawkCage = new Cage<Hawk>(new Hawk());
 
         System.out.println("Who's in the hawk cage?: " + hawkCage.toString());
-        ((Rat)ratCage.examineCage()).explore();
+        hawkCage.examineCage().hunt();
 
-        Cage dungeonCage = new Cage(new Adventurer());
+        Cage<Rat> ratCage = new Cage<Rat>(new Rat());
+
+        System.out.println("Who's in the hawk cage?: " + hawkCage.toString());
+        ratCage.examineCage().explore();
+
+        Cage<Adventurer> dungeonCage = new Cage<Adventurer>(new Adventurer());
         System.out.println("Who's in the cage?: " + dungeonCage.toString());
-        ((Adventurer)dungeonCage.examineCage()).goalInLife();
+        dungeonCage.examineCage().goalInLife();
     }
 }

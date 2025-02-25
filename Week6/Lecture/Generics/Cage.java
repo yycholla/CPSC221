@@ -1,17 +1,17 @@
 package Week6.Lecture.Generics;
 
-public class Cage {
-    private Object occupant;
+public class Cage<T> {
+    private T occupant;
 
-    public Cage(Object occupant) {
+    public Cage(T occupant) {
         this.occupant = occupant;
     }
 
-    public Object examineCage() {
+    public T examineCage() {
         return this.occupant;
     }
 
-    public void swapInCage(Object occupant) {
+    public void swapInCage(T occupant) {
         this.occupant = occupant;
     }
 
