@@ -1,4 +1,4 @@
-package Week6.Lecture.StackTester;
+package Week7.Lecture.StackTester;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -21,7 +21,7 @@ public class PostFixEvaluator {
             if (Operator.isOperator(token)) {
                 x = stack.pop();
                 y = stack.pop();
-                result = -1;
+                result = Operator.fromString(token).evaluate(x, y);
 
                 stack.push(result);
             } else {

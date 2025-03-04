@@ -1,4 +1,4 @@
-package Week6.Lecture.StackTester;
+package Week7.Lecture.StackTester;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class PostFixTester {
 
         result = evaluator.evaluate(expression);
 
-        System.out.println("\nThat expression equals: " + result);
+        System.out.println(expression + "\nThat expression equals: " + result);
 
         scan.close();
     }
