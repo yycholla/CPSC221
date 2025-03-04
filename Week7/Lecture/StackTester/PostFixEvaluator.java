@@ -1,13 +1,15 @@
 package Week7.Lecture.StackTester;
 
 import java.util.Scanner;
-import java.util.Stack;
+// import java.util.Stack;
 
 public class PostFixEvaluator {
-    private Stack<Integer> stack;
+    // private Stack<Integer> stack;
+    private StackADT<Integer> stack;
 
     public PostFixEvaluator() {
-        stack = new Stack<Integer>();
+        // stack = new Stack<Integer>();
+        stack = new ArrayStack<Integer>();
     }
 
     public int evaluate(String expression) {
