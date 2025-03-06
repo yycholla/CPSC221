@@ -8,12 +8,12 @@ public class DoSomething {
 
 	/**
 	 * Fails to take an int[] and get it into ascending order.
-	 * @param array ints that need to be ordered 
+	 * @param array ints that need to be ordered
 	 */
 	public static void doSomething(int[] array) {
 		//ADDED FOR DATA COLLECTION
 		numStatements = 2; //for loop init and 1st condition check
-		
+
 		for (int i = 0; i < array.length; i++) {
 			//ADDED FOR DATA COLLECTION
 			numStatements += 3; //left and right initializations, plus 1st while condition check
@@ -34,11 +34,11 @@ public class DoSomething {
 
 					//ADDED FOR DATA COLLECTION
 					numStatements += 3; //3 statements in swap sequence
-				}	
+				}
 				left++;
 				right--;
 			}
-			
+
 			//ADDED FOR DATA COLLECTION
 			numStatements += 2; //for loop increment and condition check
 		}
