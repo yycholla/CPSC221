@@ -1,9 +1,11 @@
 /**
  * A collection of methods that work with arrays of ints.
- * 
+ *
  * @author lsevigny
  */
 public class MethodsToAnalyze {
+
+	public static long statementCounter = 0;
 
 	/**
 	 * Return index where value is found in array or -1 if not found.
@@ -13,10 +15,13 @@ public class MethodsToAnalyze {
 	 */
 	public static int find(int[] array, int value) {
 		for (int i = 0; i < array.length; i++) {
+			statementCounter += 3;
 			if (array[i] == value) {
+				statementCounter += 2;
 				return i;
 			}
 		}
+		statementCounter += 1;
 		return -1;
 	}
 
@@ -33,10 +38,10 @@ public class MethodsToAnalyze {
 			index = find(array, oldValue);
 		}
 	}
-	
+
 	/**
 	 * Take an int[] and reorganize it so they are in ascending order.
-	 * @param array ints that need to be ordered 
+	 * @param array ints that need to be ordered
 	 */
 	public static void sortIt(int[] array) {
 		for (int next = 1; next < array.length; next++) {

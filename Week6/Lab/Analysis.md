@@ -48,7 +48,7 @@
 
 - Under what conditions would the minimum number of statements be executed for an array where n is large?
   - > The best case scenario would be for there to be no instances of `oldValue` in the array at all. This would allow us to skip the scary while loop that contains a nested loop inside the the `find()` call it contains.
-- How many occurrences of the `oldValue` element would be in the array?
+- How many occurrences of the oldValue element would be in the array?
   - > As above there would not be any `oldValue` instances within the array.
 - Where would it/they be located in the array?
   - > `oldValue` would not be contained in the array as it would avoid any loop outside of looping all the way through the array with `find()` once. Since find only returns -1 if the target value is not found, and the replace all loop only ends when -1 is returned, we want to do this as soon as possible because an entire run through `find()` is necessary to end the loop even if there was instances of `oldValue` in the array.
