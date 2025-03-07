@@ -1,6 +1,5 @@
 # Analysis of Algorithms
 
-
 > Defend all answers based on specific references to the code. Do not count return statements or initialization of method arguments. You are strongly encouraged to walk through algorithms in the debugger and to add statement-counting code to given methods to test and refine your analysis.
 
 ## Algorithm: find()
@@ -17,7 +16,7 @@
 - Where would the target element be located in the array?
   - > As stated above, the target would be located in the 0 index of the array for the best case, for a generally good case the target should be located early in the array.
 - What is the growth function under these conditions?
-  - > As the variables don't matter and the code doesn't loop the growth function would be $O(4)$
+  - > Under these conditions we would see s = 4. This scenario is agnostic to the size of the array as the return will always be on the first checked index.
 
 ### Worst Case Scenario:
 
@@ -26,16 +25,16 @@
 - Where would the target element be located?
   - > As above, the target would be located at the `n` index of the array.
 - What is the growth function under these conditions?
-  - > As this would have to loop `n` times we would be looking at $O(4n)$.
+  - > In this there are 2 non looping statements, the instantiation of i and the return statement. This gives us $s = 2 + x$ where x is the multiple of the looping statements times the amount of times looped. Since there are 3 looping statements and we are looping n times we get $s=2+3n$
 
 ### Expected Average Case Scenario:
 
 - Assuming a random array of unique elements and the target element is in the array, where would a target element be located on average?
-  - > With those assumptions we can say that the average position for the target element is `array[n/2]`.
+  - > In a randomized data set the number we are looking for will average to the halfway value. With those assumptions we can say that the average position for the target element is `array[n/2]`.
 - What is the expected average number of statements (the expected growth function) for a call to find()?
-  - > Since we determined that the growth on the maximum is $O(4n)$ we can use that in conjunction with the average position. $O(4n/2) = O(2n)$
+  - > Since we determined that the growth on the maximum is $s=2+3n$ we can use that in conjunction with the average position. $s=2+(3n/2) = 2+1.5n$.
 - What is the runtime order (big-O) of find() based on the above growth functions?
-  - > $O(2n)$
+  - > $O(2+1.5n)$
 
 ## Algorithm: replaceAll()
 
@@ -53,52 +52,42 @@
 - Where would it/they be located in the array?
   - > `oldValue` would not be contained in the array as it would avoid any loop outside of looping all the way through the array with `find()` once. Since find only returns -1 if the target value is not found, and the replace all loop only ends when -1 is returned, we want to do this as soon as possible because an entire run through `find()` is necessary to end the loop even if there was instances of `oldValue` in the array.
 - What is the growth function under these conditions?
-  - > This situation actually requires `find()` to be ran as it's worse case so we would get $O(4n)$.
+  - > In this scenario we are providing the worst possible situation for the `find()` function. We know that this is $s=2+3n$. The `replace()` function has 2 non looping statements (the instantiation of index and the statement check for the loop, false in this case). Since we are not looping we get $s=4+3n$.
 
 ### Worst Case Scenario:
 
 - Assuming newValue and oldValue are not equal, under what conditions would the maximum number of statements be executed for an array where n is large?
-  - >
+  - > For this algorithm the worst case scenario is one where all values are the `oldValue` as this creates the situation where the while loop loops for every index of the array, calling the `find()` method to generate i+1 every time.
 - How many occurrences of oldValue are in the array?
-  - >
+  - > There would be n occurances of `oldValue` in this case as this causes the most looping.
 - Where would it/they be located?
-  - >
+  - > In this scenario we have `oldValue` in every index of the array.
 - What is the growth function under these conditions?
-  - >
+  - > Since I plotted a lot of data I was able to use it to calculate the trend line as $s=2n^2+10n+5$ This makes sense given the growth formula will be exponential given that the loop in `replaceAll()` is calling another loop that also will loop more depending on the scenario
 
 ### Expected Average Case Scenario:
 
-- Assuming a random array of unique elements and oldValue is a value in the array, what is the average number of statements (the expected growth function) for a call to replaceAll()?
-  - >
+- ## Assuming a random array of unique elements and oldValue is a value in the array, what is the average number of statements (the expected growth function) for a call to replaceAll()?
 - What is the runtime order (big-O) of replaceAll() based on the above growth functions?
-  - >
 
 ## Algorithm: sortIt()
 
 ### Minimum Statements:
 
 - How many statements would be executed in a call to sortIt() when the array size is zero (n == 0) or one (n == 1)?
-  - >
 
 ### Best Case Scenario:
 
 - Under what conditions would the minimum number of statements be executed for an array where n is large?
-  - >
 - Would the algorithm execute a different number of statements if the elements in the array were already in sorted order? Reverse order? Random order? All the same value?
-  - >
 - What is the growth function under the best case conditions?
-  - >
 
 ### Worst Case Scenario:
 
 - Under what conditions would the maximum number of statements be executed for an array where n is large? (Already in some kind of sorted order? Duplicates?)
-  - >
 - What is the growth function under the worst case conditions?
-  - >
 
 ### Expected Average Case Scenario:
 
 - Assuming a random array of unique elements, what is the expected average number of statements (the expected growth function) for a call to sortIt()?
-  - >
 - What is the runtime order (big-O) of sortIt() based on the above growth functions?
-  - >
