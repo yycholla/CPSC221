@@ -8,7 +8,7 @@ public class TurboTax {
     public static void main(String[] args) throws FileNotFoundException {
         // Array size zero
         PrintStream outfileZero = new PrintStream("Zeroes.csv");
-        outfileZero.println("size, Find Statements, Replace Statments, Sort Statements");
+        outfileZero.println("size, statements");
 
         // Randomized Array
         PrintStream outfileRand = new PrintStream("Random.csv");
@@ -26,13 +26,15 @@ public class TurboTax {
         PrintStream outfileDec = new PrintStream("Decending.csv");
         outfileDec.println("size, target, Find Statements, Replace Statments, Sort Statements");
 
-        for (int size = 1; size < 101; size++) {
-            for (int i = 1; i < size + 1; i++) {
-                int[] array = ArrayOfInts.randomizedArrayWithDuplicates(size, i);
-                MethodsToAnalyze.replaceAll(array, 1, 2);
-                outfileRandDupes.println(size + ", " + i + ", " + MethodsToAnalyze.getStatementCounter());
-                MethodsToAnalyze.resetStatementCounter();
-            }
+        int[] rand = ArrayOfInts.ascendingArray(100);
+        int[] asc = ArrayOfInts.ascendingArray(100);
+        int[] dec = ArrayOfInts.descendingArray(100);
+
+        for (int i = 0; i < 101; i++) {
+            int[] array = ArrayOfInts.descendingArray(i);
+            MethodsToAnalyze.sortIt(array);
+            outfileZero.println(i + ", " + MethodsToAnalyze.getStatementCounter());
+            MethodsToAnalyze.resetStatementCounter();
         }
 
     }
