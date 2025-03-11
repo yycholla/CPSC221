@@ -9,7 +9,7 @@ public class LinkedStack<E> implements StackADT<E> {
 
     @Override
     public void push(E element) {
-        LinearNode<E> temp = new LinearNode<LinkedStack.E>(element);
+        LinearNode<E> temp = new LinearNode<E>(element);
         temp.setNext(top);
         top = temp;
         temp = null;
