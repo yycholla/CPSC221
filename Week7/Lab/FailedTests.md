@@ -165,7 +165,3 @@ Resolved alongside the `remove()` fix above.
 ### UNABLE TO RUN/COMPLETE test_ABC_removeB_AC
 
 Resolved alongside the `remove()` fix above.
-
----
-
-## SCENARIO: [] -> add 1000 elements
