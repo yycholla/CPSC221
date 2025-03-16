@@ -6,9 +6,11 @@
 
 ### emptySet_testIsEmpty
 
-- Breakpoint @ ArraySet.isEmpty(): Line 41 ( Empty array returns rear as 0 as it should, the unfixed boolean statement has the opposite behavior of what `isEmpty()` should. )
+- Breakpoint @ ArraySet.isEmpty(): Line 41 ( Empty array returns rear as 0 as it should, the unfixed boolean
+  statement has the opposite behavior of what `isEmpty()` should. )
 
-Checked error, this was not returning true for the array being empty, checked `ArraySet.java` and found that `isEmpty()` was returning true on `rear > 0` changed to return true if `rear == 0`.
+Checked error, this was not returning true for the array being empty, checked `ArraySet.java` and found that `isEmpty()` was returning
+true on `rear > 0` changed to return true if `rear == 0`.
 
 ---
 
@@ -18,7 +20,8 @@ Checked error, this was not returning true for the array being empty, checked `A
 
 - Breakpoint @ ArraySet.isEmpty(): Line 41 ( Stepping through took me into the add method where I could note the value of rear remaining == 0 )
 
-This error appeared after fixing the `isEmpty()` method. Running the debug I found the error was what I assumed. Adding `rear++;` to the `add()` method fixed the issue since it was not incrementing prior.
+This error appeared after fixing the `isEmpty()` method. Running the debug I found the error was what I assumed.
+Adding `rear++;` to the `add()` method fixed the issue since it was not incrementing prior.
 
 ### emptySet_addA_A_testSize
 
@@ -86,7 +89,8 @@ Fixing `isEmpty()` and `add()` resolved this issue
 
 - Breakpoint @ ArraySet.remove: Line 67
 
-While loop in `remove()` was looping too much considering that it was trying `setArray[i] = setArray[i + 1]` since it is taking `i + 1` we need to make the while loop stop one index before the rear. Changed while from `while (i < rear)` to `while (i < rear - 1)`.
+While loop in `remove()` was looping too much considering that it was trying `setArray[i] = setArray[i + 1]` since it is taking `i + 1`
+we need to make the while loop stop one index before the rear. Changed while from `while (i < rear)` to `while (i < rear - 1)`.
 
 ### A_addB_AB_testRemoveB
 
@@ -100,7 +104,8 @@ While loop in `remove()` was looping too much considering that it was trying `se
 
 - Breakpoint @ ArraySet.remove: Line 67
 
-While loop in `remove()` was looping too much considering that it was trying `setArray[i] = setArray[i + 1]` since it is taking `i + 1` we need to make the while loop stop one index before the rear. Changed while from `while (i < rear)` to `while (i < rear - 1)`.
+While loop in `remove()` was looping too much considering that it was trying `setArray[i] = setArray[i + 1]` since it is taking `i + 1`
+we need to make the while loop stop one index before the rear. Changed while from `while (i < rear)` to `while (i < rear - 1)`.
 
 ---
 
@@ -128,15 +133,18 @@ Resolved alongside the `size()` fix above.
 
 ### AB_addC_ABC_testContainsA
 
-Contains was not working properly as `rear` was not incrementing. `for (int i = 0; i < rear; i++)` would never run since rear was pinned at 0 instead of reflecting the size of the array.
+Contains was not working properly as `rear` was not incrementing. `for (int i = 0; i < rear; i++)` would never run since rear was
+pinned at 0 instead of reflecting the size of the array.
 
 ### AB_addC_ABC_testContainsB
 
-Contains was not working properly as `rear` was not incrementing. `for (int i = 0; i < rear; i++)` would never run since rear was pinned at 0 instead of reflecting the size of the array.
+Contains was not working properly as `rear` was not incrementing. `for (int i = 0; i < rear; i++)` would never run since rear was
+pinned at 0 instead of reflecting the size of the array.
 
 ### AB_addC_ABC_testContainsC
 
-Contains was not working properly as `rear` was not incrementing. `for (int i = 0; i < rear; i++)` would never run since rear was pinned at 0 instead of reflecting the size of the array.
+Contains was not working properly as `rear` was not incrementing. `for (int i = 0; i < rear; i++)` would never run since rear was
+pinned at 0 instead of reflecting the size of the array.
 
 ### AB_addC_ABC_testRemoveA
 
