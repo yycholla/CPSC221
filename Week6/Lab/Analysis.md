@@ -67,27 +67,37 @@
 
 ### Expected Average Case Scenario:
 
-- ## Assuming a random array of unique elements and oldValue is a value in the array, what is the average number of statements (the expected growth function) for a call to replaceAll()?
+- Assuming a random array of unique elements and oldValue is a value in the array, what is the average number of statements (the expected growth function) for a call to replaceAll()?
+- > this one is harder for me to wrap my head around because it depends on the bounds of the random integers to calculate the probability of `oldValue` even being contained within the array. At a certain point I thought about this enough that my work addled brain thought it was a good idea to ask Deepseek r1 for fun. This gave me T=n(ln(np)+γ). Based off of Hm the harmonic number which is very zen of it. That being said, my gut feeling was an exponential relationship. I charted this with a pivot table based off of arrays with size 1-100 and with a loop in that loop testing duplicates allowed as 1-sizeOfArray. The best fit line for the average steps based on size which gave me an exponential graph. I am possibly overthinking this one and, in an effort to choose my battles, will be moving on to the next question. (if you are reading this then I either did not return or could not come up with anything better.)
 - What is the runtime order (big-O) of replaceAll() based on the above growth functions?
+- > The average runtime order is $o(n^2)$.
 
 ## Algorithm: sortIt()
 
 ### Minimum Statements:
 
 - How many statements would be executed in a call to sortIt() when the array size is zero (n == 0) or one (n == 1)?
+  - > When running `sortIt()` with an array size of zero the output with statements counted is 2.
 
 ### Best Case Scenario:
 
 - Under what conditions would the minimum number of statements be executed for an array where n is large?
+  - > SInce `sortIt()` loops when the value of the current index is less than the previous, we would want the array to already be sorted ascending each index.
 - Would the algorithm execute a different number of statements if the elements in the array were already in sorted order? Reverse order? Random order? All the same value?
+  - > The algorithm will have far less statements if the array is already sorting ascended as it would not loop through the while loop. Any randomization will make the while loop loop, but not all the time. If the array is sorted in decending order it will force the while loop to loop each time making it the most taxing.
 - What is the growth function under the best case conditions?
+  - > Running my testing program I see that with an ascending array we get a linear dataset. This is a linear line modelled with 2 as the intercept and the statements increasing by 4 for every incrementation of size, in this case we get $s=4n+2$.
 
 ### Worst Case Scenario:
 
 - Under what conditions would the maximum number of statements be executed for an array where n is large? (Already in some kind of sorted order? Duplicates?)
+  - > The worst case scenario would be a descending array, this forces the while loop to loop over as many times as it would take to move the value to a point where the value to the left is less than it is, this forces an ever increasing amount of loops and for each index to loop the maximum amount of times.
 - What is the growth function under the worst case conditions?
+  - > Running this in my testing program to gather data, them putting it in excel I get a trendline modelled as $s=1.5n^2+2.34n+2$.
 
 ### Expected Average Case Scenario:
 
 - Assuming a random array of unique elements, what is the expected average number of statements (the expected growth function) for a call to sortIt()?
+  - > Running this through my testing program and analysing the data I get another exponential relationship, this is significantly better than the worst case though. $s=0.73n^2+4.9n+2$.
 - What is the runtime order (big-O) of sortIt() based on the above growth functions?
+  - > In this case we are looking at an quadratic growth function for the average case. $o(n^2)$.

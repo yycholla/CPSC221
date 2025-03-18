@@ -3,15 +3,16 @@ import java.util.NoSuchElementException;
 
 /**
  * An array-based implementation of the SimpleSet interface.
- * 
+ *
  * @param <E> type to store in the set
- * 
+ *
  * @author sstudent
  */
 public class ArraySet<E> implements SimpleSet<E> {
 	private static final int DEFAULT_CAPACITY = 3;
-	private E[] setArray; //holds current elements of the set in consecutive indexes beginning with 0
-	private int rear; //the next open index where a new element could be added, also the size of the set
+	private E[] setArray; // holds current elements of the set in consecutive indexes beginning with 0
+	private int rear; // the next open index where a new element could be added, also the size of the
+						// set
 
 	/**
 	 * Constructor - initializes new set for use
@@ -19,9 +20,10 @@ public class ArraySet<E> implements SimpleSet<E> {
 	public ArraySet() {
 		this(DEFAULT_CAPACITY);
 	}
-	
+
 	/**
 	 * Constructor - initializes new set for use
+	 *
 	 * @param initialCapacity specifies expected maximum capacity needed by the set
 	 */
 	@SuppressWarnings("unchecked")
@@ -37,7 +39,7 @@ public class ArraySet<E> implements SimpleSet<E> {
 
 	@Override
 	public boolean isEmpty() {
-		return (rear > 0);
+		return (rear == 0);
 	}
 
 	@Override
@@ -57,6 +59,7 @@ public class ArraySet<E> implements SimpleSet<E> {
 				expandCapacity();
 			}
 			setArray[rear] = element;
+			rear++;
 		}
 	}
 
@@ -64,14 +67,14 @@ public class ArraySet<E> implements SimpleSet<E> {
 	public E remove(E element) {
 		E retVal = null;
 		int i = 0;
-		//locate the element to be removed
+		// locate the element to be removed
 		while (retVal == null && i < rear) {
 			if (setArray[i].equals(element)) {
 				retVal = setArray[i];
-				//shift all following elements one space forward
-				//so there are no gaps in the array
-				while (i < rear) {
-					setArray[i] = setArray[i+1];
+				// shift all following elements one space forward
+				// so there are no gaps in the array
+				while (i < rear - 1) {
+					setArray[i] = setArray[i + 1];
 					i++;
 				}
 			}
@@ -84,7 +87,9 @@ public class ArraySet<E> implements SimpleSet<E> {
 		return retVal;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
@@ -95,12 +100,12 @@ public class ArraySet<E> implements SimpleSet<E> {
 			str.append(", ");
 		}
 		if (rear > 0) {
-			str.delete(str.length()-2, str.length()); //drop trailing ", "
+			str.delete(str.length() - 2, str.length()); // drop trailing ", "
 		}
 		str.append("]");
 		return str.toString();
 	}
-	
+
 	/**
 	 * Doubles the capacity of setArray
 	 */
@@ -108,4 +113,3 @@ public class ArraySet<E> implements SimpleSet<E> {
 		setArray = Arrays.copyOf(setArray, setArray.length * 2);
 	}
 }
-
