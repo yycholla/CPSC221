@@ -1,16 +1,15 @@
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Scanner;
 // import java.util.Stack;
 
 public class PostFixEvaluator {
     // private Stack<Integer> stack;
-    private Deque<Integer> stack;
-    // private StackADT<Integer> stack;
+    // private Deque<Integer> stack;
+    private StackADT<Integer> stack;
 
     public PostFixEvaluator() {
         // stack = new Stack<Integer>();
-        stack = new LinkedList<Integer>();
+        // stack = new LinkedList<Integer>();
+        stack = new LinkedStack<Integer>();
     }
 
     public int evaluate(String expression) {

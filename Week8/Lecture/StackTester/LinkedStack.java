@@ -41,7 +41,17 @@ public class LinkedStack<E> implements StackADT<E> {
     }
 
     public String toString() {
-        return ""; //TODO this
+        String result = "[";
+        LinearNode<E> current = top;
+        while (current != null) {
+            result += current;
+            current = current.getNext();
+            if ( current != null) {
+                result += ", ";
+            }
+        }
+        result += "]";
+        return result;
     }
 
 
