@@ -1,3 +1,5 @@
+package ItsNotALoopItsASpiral;
+
 public class Customer {
     private int arrivalTime, departureTime;
 

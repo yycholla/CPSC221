@@ -1,3 +1,5 @@
+package ItsNotALoopItsASpiral;
+
 public interface QueueADT<E> {
     public void enqueue(E element);
 

@@ -1,3 +1,4 @@
+package ItsNotALoopItsASpiral;
 // import java.util.LinkedList;
 // import java.util.Queue;
 
@@ -7,7 +8,8 @@ public class TicketCounter {
     private final static int NUM_CUSTOMERS = 200;
     private final static int MAX_CASHIERS = 10;
     public static void main(String[] args) {
-        QueueADT<Customer> customerQueue = new CircularArrayQueue<Customer>(); // Line of customers
+        QueueADT<Customer> customerQueue = new LinkedQueue<Customer>();
+        // QueueADT<Customer> customerQueue = new CircularArrayQueue<Customer>(); // Line of customers circle array
         // Queue<Customer> customerQueue = new LinkedList<Customer>(); // Line of customers
         Customer customer; // current customer being served
         int totalTime; // Sum of all the time that all customers spent before entering the theater
