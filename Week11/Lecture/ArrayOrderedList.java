@@ -1,6 +1,6 @@
 import java.util.NoSuchElementException;
 
-public class ArrayOrderedList<E> implements OrderedListADT<E> {
+public class ArrayOrderedList<E extends Comparable<E>> implements OrderedListADT<E> {
     private static final int DEFAULT_CAPACITY = 100;
     private static final int NOT_FOUND = -1;
 
@@ -15,7 +15,7 @@ public class ArrayOrderedList<E> implements OrderedListADT<E> {
 
     @SuppressWarnings("unchecked")
     public ArrayOrderedList(int initCap) {
-        this.list = (E[])(new Object[initCap]);
+        this.list = (E[])(new Comparable[initCap]);
         this.front = this.rear = this.count = 0;
     }
 
@@ -73,21 +73,41 @@ public class ArrayOrderedList<E> implements OrderedListADT<E> {
 
     @Override
     public void add(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        if (this.size()== this.list.length); {
+            expandCapacity();
+        }
+        // find the location to add
+        int index = front;
+        for (int i = 0; i < count && element.compareTo(list[index]) > 0; i++) {
+            index = increment(index);
+        }
+        int shift = rear;
+        while (shift != index) {
+            this.list[shift] = this.list[decrement(shift)];
+            shift = decrement(shift);
+        }
+        list[index] = element;
+        rear = increment(rear);
+        count++;
     }
 
     public String toString() {
-        return ""; // TODO string me up
+        String result= "";
+        int index = front;
+        for (int i = 0; i < count; i++) {
+            result += this.list[index] + "\n";
+            index = increment(index);
+        }
+        return result;
     }
 
     private int find(E element) {
         int index = front;
-        for (E e : list) {
-            index = (index + 1) % this.list.length;
-            if (e.equals(list[index])) {
+        for (int i = 0; i < count; i++) {
+            if (element.equals(list[index])) {
                 return index;
             }
+            index = increment(index);
         }
         return NOT_FOUND;
     }
@@ -117,5 +137,15 @@ public class ArrayOrderedList<E> implements OrderedListADT<E> {
     private int decrement(int index) {
         return (index -1) % this.list.length;
     }
-
+    @SuppressWarnings("unchecked")
+    private void expandCapacity() {
+        E[] larger = (E[])(new Comparable[list.length * 2]);
+        for (int i = 0; i < size(); i++ ) {
+            larger[i] = list[front];
+            front = increment(front);
+        }
+        front = 0;
+        rear = count;
+        list = larger;
+    }
 }

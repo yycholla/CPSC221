@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Course implements Serializable {
+public class Course implements Serializable, Comparable<Course> {
     private String prefix;
     private int number;
     private String title;
@@ -56,6 +56,11 @@ public class Course implements Serializable {
     public boolean equals(Object otherCourse) {
         if (!(otherCourse instanceof Course)) { return false; }
         return getCourseString().equals(((Course)otherCourse).getCourseString());
+    }
+
+    @Override
+    public int compareTo(Course other) {
+        return this.getCourseString().compareTo(other.getCourseString());
     }
 
 

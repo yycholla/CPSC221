@@ -9,10 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProgramOfStudy implements Serializable {
-    private List<Course> list;
+    private OrderedListADT<Course> list;
 
     public ProgramOfStudy() {
-        list = new LinkedList<Course>();
+        // list = new LinkedList<Course>();
+        list = new ArrayOrderedList<Course>();
     }
 
     public void addCourse(Course course) {
@@ -28,11 +29,12 @@ public class ProgramOfStudy implements Serializable {
     }
 
     public String toString() {
-        String result = "";
-        for (Course course : list) {
-            result += course + "\n";
-        }
-        return result;
+        // String result = "";
+        // for (Course course : list) {
+        //     result += course + "\n";
+        // }
+        // return result;
+        return this.list.toString();
     }
 
     public void save(String fileName) throws IOException {
